@@ -30,7 +30,7 @@ double k1_S(string region) {
 	double Vp = seir_params[region]["Vp"];
 	double Vf = seir_params[region]["Vf"];
 
-	return (A - (alpha * S0 * I0) - (mew * S0) - (Vp * S0) - (Vf * S0));
+	return (A - (alpha * S0 * I0 ) - (mew * S0) - (Vp * S0) - (Vf * S0));
 }
 
 double k1_E(string region) {
@@ -43,7 +43,7 @@ double k1_E(string region) {
 	double delta = seir_params[region]["delta"];
 	double Vp = seir_params[region]["Vp"];
 
-	return ((alpha * S0 * I0) - (mew * E0) - (delta * E0) + (Vp * S0));
+	return ((alpha * S0 * I0 ) - (mew * E0) - (delta * E0) + (Vp * S0));
 }
 
 
@@ -77,7 +77,7 @@ double k2_S(string region, float delT_by2) {
 	double k1i_val = k1_I(region);
 
 	double A = seir_params[region]["A"];
-	double alpha = seir_params[region]["alpha"];
+	double alpha = seir_params[region]["alpha"] ;
 	double S0 = seir_params[region]["S0"];
 	double I0 = seir_params[region]["I0"];
 	double mew = seir_params[region]["mew"];
@@ -403,7 +403,7 @@ void computeSEIR(string region) {
 	E0 = seir_params[region]["E0"];
 	I0 = seir_params[region]["I0"];
 	R0 = seir_params[region]["R0"];
-	double step_time = 0.01;
+	double step_time = 0.1;
 	double half_step_time = step_time/2;
 
 	double s1 = nextS(region, step_time);
@@ -415,6 +415,7 @@ void computeSEIR(string region) {
 	seir_params[region]["E0"] = e1;
 	seir_params[region]["I0"] = i1;
 	seir_params[region]["R0"] = r1;
+	seir_params[region]["N0"] = s1 + e1 + i1 + r1;
 }
 
 int main() {
@@ -484,9 +485,10 @@ int main() {
 
 	cout << "\n10 States " << endl;
 */
-cout << seir_params["KERALA"]["S0"] << endl;
+cout << seir_params["TRIVANDRUM"]["S0"] << endl;
 
-region = "KERALA";
+region = "TRIVANDRUM";
+int steps_per_day = 1;
 	for(int reg_idx=0; reg_idx < allRegions.size(); reg_idx++){
 		cout << "SEIR of region " << region << endl;
 		cout << "Initial Day 0: " << endl;
@@ -499,15 +501,18 @@ region = "KERALA";
 		cout << "E" << 0 << ": " << E0 << endl;
 		cout << "I" << 0 << ": " << I0 << endl;
 		cout << "R" << 0 << ": " << R0 << endl << endl;
+		for(int i=2; i<=55; i++) {
 
-		for(int i=2; i<=7; i++) {
+			for(int step=0; step<steps_per_day; step++) {
+				computeSEIR(region);
+
+			}
+			
 			S0 = seir_params[region]["S0"];
 			E0 = seir_params[region]["E0"];
 			I0 = seir_params[region]["I0"];
 			R0 = seir_params[region]["R0"];
-			
-			computeSEIR(region);
-			
+
 			if(i<=55){
 				cout << "Day " << i << endl;
 				cout << "S" << i << ": " << S0 << endl;
