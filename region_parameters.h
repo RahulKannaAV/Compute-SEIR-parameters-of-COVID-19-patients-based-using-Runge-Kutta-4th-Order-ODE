@@ -91,9 +91,7 @@ unordered_map<string,double> parameter_bhubaneswar={{"A",16000},{"alpha",0.00001
 unordered_map<string,double> parameter_dehradun={{"A",12000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",1000000},{"S0",988000},{"E0",7000},{"I0",900},{"R0",3100},{"Vp",0.18},{"Vf",0.08}};
 unordered_map<string,double> parameter_srinagar={{"A",13000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",1200000},{"S0",1186000},{"E0",9000},{"I0",1100},{"R0",2900},{"Vp",0.17},{"Vf",0.07}};
 
-// ---------------- MASTER MAP ----------------
 
-/*	
 	unordered_map<string, double> parameter_tamilnadu = {
 		{"A", 1500000},
 		{"alpha", 0.00001},
@@ -142,21 +140,7 @@ unordered_map<string,double> parameter_srinagar={{"A",13000},{"alpha",0.000010},
 		{"Vf", 0.095}
 	};
 	
-	unordered_map<string, double> parameter_delhi = {
-    {"A", 900000},
-    {"alpha", 0.00001},
-    {"delta", 1.4},
-    {"gamma", 0.80},
-    {"mew", 0.155},
-    {"mew1", 0.17},
-    {"N0", 20000000},
-    {"S0", 18965000},
-    {"E0", 120000},
-    {"I0", 95000},
-    {"R0", 820000},
-    {"Vp", 0.22},
-    {"Vf", 0.11}
-	};
+
 
 	unordered_map<string, double> parameter_karnataka = {
     {"A", 1800000},
@@ -377,7 +361,7 @@ unordered_map<string,double> parameter_southafrica = {
     {"N0",60000000},{"S0",57500000},{"E0",90000},{"I0",150000},{"R0",850000},{"Vp",0.28},{"Vf",0.18}
 };
 
-*/
+
 inline unordered_map<string, unordered_map<string, double>> seir_params = {
 
     {"TRIVANDRUM", parameter_trivandrum},
@@ -409,37 +393,36 @@ inline unordered_map<string, unordered_map<string, double>> seir_params = {
     {"GUWAHATI", parameter_guwahati},
     {"BHUBANESWAR", parameter_bhubaneswar},
     {"DEHRADUN", parameter_dehradun},
-    {"SRINAGAR", parameter_srinagar}
+    {"SRINAGAR", parameter_srinagar},
+	{"TAMIL_NADU", parameter_tamilnadu},
+	{"MAHARASHTRA", parameter_maharashtra},
+	{"GUJARAT", parameter_gujarat},
+	{"DELHI", parameter_delhi},
+	{"KARNATAKA", parameter_karnataka},
+	{"UTTAR_PRADESH", parameter_uttarpradesh},
+	{"WEST_BENGAL", parameter_westbengal},
+	{"RAJASTHAN", parameter_rajasthan},
+	{"MADHYA_PRADESH", parameter_madhyapradesh},
+	{"ANDHRA_PRADESH", parameter_andhrapradesh},
+	{"TELANGANA", parameter_telangana},
+	{"BIHAR", parameter_bihar},
+	{"ODISHA", parameter_odisha},
+	{"PUNJAB", parameter_punjab},
+	{"HARYANA", parameter_haryana},
+	{"ASSAM", parameter_assam},
+	{"JHARKHAND", parameter_jharkhand},
+	{"USA", parameter_usa},
+	{"UK", parameter_uk},
+	{"GERMANY", parameter_germany},
+	{"FRANCE", parameter_france},
+	{"BRAZIL", parameter_brazil},
+	{"RUSSIA", parameter_russia},
+	{"CHINA", parameter_china},
+	{"JAPAN", parameter_japan},
+	{"AUSTRALIA", parameter_australia},
+	{"CANADA", parameter_canada},
+	{"ITALY", parameter_italy},
+	{"SOUTH_AFRICA", parameter_southafrica},
 };
 	
-/*
-		{"TAMIL_NADU", parameter_tamilnadu},
-		{"MAHARASHTRA", parameter_maharashtra},
-		{"GUJARAT", parameter_gujarat},
-		{"DELHI", parameter_delhi},
-		{"KARNATAKA", parameter_karnataka},
-		{"UTTAR_PRADESH", parameter_uttarpradesh},
-		{"WEST_BENGAL", parameter_westbengal},
-		{"RAJASTHAN", parameter_rajasthan},
-		{"MADHYA_PRADESH", parameter_madhyapradesh},
-		{"ANDHRA_PRADESH", parameter_andhrapradesh},
-		{"TELANGANA", parameter_telangana},
-		{"BIHAR", parameter_bihar},
-		{"ODISHA", parameter_odisha},
-		{"PUNJAB", parameter_punjab},
-		{"HARYANA", parameter_haryana},
-		{"ASSAM", parameter_assam},
-		{"JHARKHAND", parameter_jharkhand},
-		{"USA", parameter_usa},
-		{"UK", parameter_uk},
-		{"GERMANY", parameter_germany},
-		{"FRANCE", parameter_france},
-		{"BRAZIL", parameter_brazil},
-		{"RUSSIA", parameter_russia},
-		{"CHINA", parameter_china},
-		{"JAPAN", parameter_japan},
-		{"AUSTRALIA", parameter_australia},
-		{"CANADA", parameter_canada},
-		{"ITALY", parameter_italy},
-		{"SOUTH_AFRICA", parameter_southafrica},
-*/	
+

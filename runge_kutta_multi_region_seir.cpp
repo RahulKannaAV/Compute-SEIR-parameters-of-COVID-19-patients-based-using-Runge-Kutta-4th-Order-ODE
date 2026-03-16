@@ -20,6 +20,9 @@ using namespace std;
 #define Vf 0.1517 // Fully Vaccinated Population Count
 */
 
+
+
+
 // First order RK
 double k1_S(string region) {
 	double A = seir_params[region]["A"];
@@ -396,20 +399,18 @@ double nextR(string region, float step_time) {
 }
 
 
-void computeSEIR(string region) {
-	double S0, E0, I0, R0;
+void computeSEIR(string region, double STEP_TIME) {
+	double S0, E0, I0, N0, R0;
 
 	S0 = seir_params[region]["S0"];
 	E0 = seir_params[region]["E0"];
 	I0 = seir_params[region]["I0"];
 	R0 = seir_params[region]["R0"];
-	double step_time = 0.1;
-	double half_step_time = step_time/2;
 
-	double s1 = nextS(region, step_time);
-	double e1 = nextE(region,  step_time);
-	double i1 = nextI(region,  step_time);
-	double r1 = nextR(region, step_time);
+	double s1 = nextS(region, STEP_TIME);
+	double e1 = nextE(region,  STEP_TIME);
+	double i1 = nextI(region,  STEP_TIME);
+	double r1 = nextR(region, STEP_TIME);
 
 	seir_params[region]["S0"] = s1;
 	seir_params[region]["E0"] = e1;
@@ -420,109 +421,50 @@ void computeSEIR(string region) {
 
 int main() {
 	cout << setprecision(0) << fixed;
+
 	double S0, E0, I0, R0;
 	string region;
-
+	
 	vector<string> allRegions;
-
+	
 	for(auto region_name: seir_params) {
 		allRegions.push_back(region_name.first);
 	}
-
+	
 	for(string regions: allRegions) {
 		cout << regions << " ";
 	}
 	cout << endl << endl;
-
-/*
-	int k1s_value = k1_S(region);
-	int k1e_value = k1_E(region);
-	int k1i_value = k1_I(region);
-	int k1r_value = k1_R(region);
 	
-	int k2s_value = k2_S(region, step_time);
-	int k2e_value = k2_E(region, half_step_time);
-	int k2i_value = k2_I(region, half_step_time);
-	int k2r_value = k2_R(region, half_step_time);
-
-	
-	cout << "K1 for S: " << k1s_value << endl;
-	cout << "K1 for E: " << k1e_value << endl;
-	cout << "K1 for I: " << k1i_value << endl;
-	cout << "K1 for R: " << k1r_value << endl;
-	
-	cout << "\nK2 for S: " << k2s_value << endl;
-	cout << "K2 for E: " << k2e_value << endl;
-	cout << "K2 for I: " << k2i_value << endl;
-	cout << "K2 for R: " << k2r_value << endl;
-	
-	int k3s_value = k3_S(region, half_step_time);
-	int k3e_value = k3_E(region, half_step_time);
-	int k3i_value = k3_I(region, half_step_time);
-	int k3r_value = k3_R(region, half_step_time);
-
-	cout << "\nK3 for S: " << k3s_value << endl;
-	cout << "K3 for E: " << k3e_value << endl;
-	cout << "K3 for I: "  << k3i_value << endl;
-	cout << "K3 for R: " << k3r_value << endl;
-	
-	int k4s_value = k4_S(region, step_time);
-	int k4e_value = k4_E(region, step_time);
-	int k4i_value = k4_I(region, step_time);
-	int k4r_value = k4_R(region, step_time);
-	
-	cout << "\nK4 for S: " << k4s_value << endl;
-	cout << "K4 for E: " << k4e_value << endl;
-	cout << "K4 for I: " << k4i_value << endl;
-	cout << "K4 for R: " << k4r_value << endl;
-	
-	cout << "Initial: " << endl;
-
-	cout << "S" << 0 << ": " << S0 << endl;
-	cout << "E" << 0 << ": " << E0 << endl;
-	cout << "I" << 0 << ": " << I0 << endl;
-	cout << "R" << 0 << ": " << R0 << endl << endl;
-
-	cout << "\n10 States " << endl;
-*/
 cout << seir_params["TRIVANDRUM"]["S0"] << endl;
 
-region = "TRIVANDRUM";
-int steps_per_day = 1;
-	for(int reg_idx=0; reg_idx < allRegions.size(); reg_idx++){
-		cout << "SEIR of region " << region << endl;
-		cout << "Initial Day 0: " << endl;
-		S0 = seir_params[region]["S0"];
-		E0 = seir_params[region]["E0"];
-		I0 = seir_params[region]["I0"];
-		R0 = seir_params[region]["R0"];
-						
-		cout << "S" << 0 << ": " << S0 << endl;
-		cout << "E" << 0 << ": " << E0 << endl;
-		cout << "I" << 0 << ": " << I0 << endl;
-		cout << "R" << 0 << ": " << R0 << endl << endl;
-		for(int i=2; i<=55; i++) {
 
-			for(int step=0; step<steps_per_day; step++) {
-				computeSEIR(region);
 
-			}
-			
+for(int reg_idx=0; reg_idx < allRegions.size(); reg_idx++){
+	region = allRegions[reg_idx];
+	const int N_INIT = seir_params[region]["N0"];
+	const double STEP_TIME = 0.1*(1679754.0/N_INIT);
+	const int NUM_STEPS = (int)1.0/(STEP_TIME);
+	
+	cout << "NUM STEPS: " << NUM_STEPS << endl << endl;
+	cout << "SEIR of region (" << reg_idx+1 << "/" << allRegions.size() << ") " << region << endl;
+	
+		for(int i=1; i<=(73*NUM_STEPS); i++) {
 			S0 = seir_params[region]["S0"];
 			E0 = seir_params[region]["E0"];
 			I0 = seir_params[region]["I0"];
 			R0 = seir_params[region]["R0"];
-
-			if(i<=55){
-				cout << "Day " << i << endl;
-				cout << "S" << i << ": " << S0 << endl;
-				cout << "E" << i << ": " << E0 << endl;
-				cout << "I" << i << ": " << I0 << endl;
-				cout << "R" << i << ": " << R0 << endl << endl;
+			
+			if(i == 1) {
+				cout << " INITIAL: " << endl;
+				cout << "S: " << S0 << " | E: " << E0 << " | I: " << I0 << " | R: " << R0 << endl << endl;
 			}
+			computeSEIR(region, STEP_TIME);
+			
 	
 		}
-		break;
+		cout << " FINAL: " << endl;
+		cout << "S: " << S0 << " | E: " << E0 << " | I: " << I0 << " | R: " << R0 << endl << endl;
 	}
 	
 	/*
