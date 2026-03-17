@@ -361,6 +361,167 @@ unordered_map<string,double> parameter_southafrica = {
     {"N0",60000000},{"S0",57500000},{"E0",90000},{"I0",150000},{"R0",850000},{"Vp",0.28},{"Vf",0.18}
 };
 
+unordered_map<string,double> parameter_agra={{"A",35000},{"alpha",0.000011},{"delta",1.01},{"gamma",0.89},{"mew",0.143},{"mew1",0.156},{"N0",2500000},{"S0",2460000},{"E0",18000},{"I0",3000},{"R0",19000},{"Vp",0.18},{"Vf",0.08}};
+unordered_map<string,double> parameter_varanasi={{"A",30000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.155},{"N0",2000000},{"S0",1965000},{"E0",15000},{"I0",2500},{"R0",17500},{"Vp",0.17},{"Vf",0.07}};
+unordered_map<string,double> parameter_amritsar={{"A",28000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.155},{"N0",1800000},{"S0",1765000},{"E0",12000},{"I0",2200},{"R0",16800},{"Vp",0.20},{"Vf",0.10}};
+unordered_map<string,double> parameter_jodhpur={{"A",26000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",1700000},{"S0",1670000},{"E0",11000},{"I0",2000},{"R0",15000},{"Vp",0.19},{"Vf",0.09}};
+unordered_map<string,double> parameter_mysuru={{"A",22000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.89},{"mew",0.143},{"mew1",0.155},{"N0",1500000},{"S0",1475000},{"E0",9000},{"I0",1500},{"R0",15000},{"Vp",0.22},{"Vf",0.11}};
+unordered_map<string,double> parameter_mangalore={{"A",18000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.89},{"mew",0.143},{"mew1",0.155},{"N0",1200000},{"S0",1180000},{"E0",7000},{"I0",1200},{"R0",11800},{"Vp",0.24},{"Vf",0.12}};
+unordered_map<string,double> parameter_kanpur={{"A",40000},{"alpha",0.000011},{"delta",1.01},{"gamma",0.89},{"mew",0.143},{"mew1",0.156},{"N0",3000000},{"S0",2950000},{"E0",20000},{"I0",3500},{"R0",26500},{"Vp",0.16},{"Vf",0.07}};
+unordered_map<string,double> parameter_allahabad={{"A",32000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.155},{"N0",2300000},{"S0",2260000},{"E0",16000},{"I0",2800},{"R0",21200},{"Vp",0.17},{"Vf",0.07}};
+unordered_map<string,double> parameter_nashik={{"A",30000},{"alpha",0.000011},{"delta",1.01},{"gamma",0.90},{"mew",0.143},{"mew1",0.156},{"N0",2200000},{"S0",2165000},{"E0",14000},{"I0",2600},{"R0",19400},{"Vp",0.20},{"Vf",0.10}};
+unordered_map<string,double> parameter_aurangabad={{"A",28000},{"alpha",0.000011},{"delta",1.01},{"gamma",0.90},{"mew",0.143},{"mew1",0.156},{"N0",2000000},{"S0",1960000},{"E0",13000},{"I0",2300},{"R0",24700},{"Vp",0.19},{"Vf",0.09}};
+unordered_map<string,double> parameter_vijayawada={{"A",26000},{"alpha",0.000011},{"delta",1.01},{"gamma",0.90},{"mew",0.143},{"mew1",0.156},{"N0",1800000},{"S0",1765000},{"E0",12000},{"I0",2000},{"R0",21500},{"Vp",0.21},{"Vf",0.11}};
+unordered_map<string,double> parameter_gwalior={{"A",24000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.155},{"N0",1700000},{"S0",1670000},{"E0",11000},{"I0",1800},{"R0",16200},{"Vp",0.18},{"Vf",0.08}};
+unordered_map<string,double> parameter_jabalpur={{"A",22000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.155},{"N0",1500000},{"S0",1472000},{"E0",9000},{"I0",1500},{"R0",18500},{"Vp",0.18},{"Vf",0.08}};
+unordered_map<string,double> parameter_udaipur={{"A",18000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",1200000},{"S0",1180000},{"E0",7000},{"I0",1200},{"R0",11800},{"Vp",0.19},{"Vf",0.09}};
+unordered_map<string,double> parameter_shimla={{"A",10000},{"alpha",0.000009},{"delta",1.00},{"gamma",0.87},{"mew",0.143},{"mew1",0.153},{"N0",800000},{"S0",785000},{"E0",4000},{"I0",700},{"R0",10300},{"Vp",0.23},{"Vf",0.13}};
+unordered_map<string,double> parameter_siliguri={{"A",15000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",1100000},{"S0",1080000},{"E0",8000},{"I0",1100},{"R0",11900},{"Vp",0.17},{"Vf",0.07}};
+unordered_map<string,double> parameter_dhanbad={{"A",17000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",1300000},{"S0",1275000},{"E0",9000},{"I0",1400},{"R0",15600},{"Vp",0.16},{"Vf",0.07}};
+unordered_map<string,double> parameter_asansol={{"A",16000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",1200000},{"S0",1180000},{"E0",8000},{"I0",1200},{"R0",10800},{"Vp",0.17},{"Vf",0.07}};
+unordered_map<string,double> parameter_salem={{"A",20000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.89},{"mew",0.143},{"mew1",0.155},{"N0",1600000},{"S0",1570000},{"E0",11000},{"I0",1700},{"R0",17300},{"Vp",0.21},{"Vf",0.10}};
+unordered_map<string,double> parameter_tirunelveli={{"A",18000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.89},{"mew",0.143},{"mew1",0.155},{"N0",1400000},{"S0",1375000},{"E0",9000},{"I0",1400},{"R0",16000},{"Vp",0.22},{"Vf",0.11}};
+unordered_map<string,double> parameter_rajkot={{"A",28000},{"alpha",0.000011},{"delta",1.01},{"gamma",0.90},{"mew",0.143},{"mew1",0.156},{"N0",2000000},{"S0",1965000},{"E0",13000},{"I0",2200},{"R0",19300},{"Vp",0.20},{"Vf",0.10}};
+unordered_map<string,double> parameter_jamshedpur={{"A",24000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.89},{"mew",0.143},{"mew1",0.155},{"N0",1800000},{"S0",1768000},{"E0",11000},{"I0",1800},{"R0",16200},{"Vp",0.18},{"Vf",0.08}};
+unordered_map<string,double> parameter_noida={{"A",26000},{"alpha",0.000012},{"delta",1.01},{"gamma",0.90},{"mew",0.143},{"mew1",0.157},{"N0",2200000},{"S0",2165000},{"E0",14000},{"I0",2500},{"R0",21000},{"Vp",0.22},{"Vf",0.11}};
+unordered_map<string,double> parameter_faridabad={{"A",25000},{"alpha",0.000012},{"delta",1.01},{"gamma",0.90},{"mew",0.143},{"mew1",0.157},{"N0",2000000},{"S0",1960000},{"E0",13000},{"I0",2300},{"R0",24700},{"Vp",0.21},{"Vf",0.11}};
+unordered_map<string,double> parameter_ghaziabad={{"A",27000},{"alpha",0.000012},{"delta",1.01},{"gamma",0.90},{"mew",0.143},{"mew1",0.157},{"N0",2400000},{"S0",2360000},{"E0",15000},{"I0",2600},{"R0",21400},{"Vp",0.22},{"Vf",0.11}};
+unordered_map<string,double> parameter_kota={{"A",18000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",1200000},{"S0",1180000},{"E0",8000},{"I0",1200},{"R0",10800},{"Vp",0.19},{"Vf",0.09}};
+unordered_map<string,double> parameter_bareilly={{"A",22000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.155},{"N0",1600000},{"S0",1570000},{"E0",11000},{"I0",1700},{"R0",17300},{"Vp",0.17},{"Vf",0.07}};
+unordered_map<string,double> parameter_aligarh={{"A",20000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.155},{"N0",1400000},{"S0",1375000},{"E0",9000},{"I0",1500},{"R0",15000},{"Vp",0.16},{"Vf",0.07}};
+unordered_map<string,double> parameter_moradabad={{"A",21000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.155},{"N0",1500000},{"S0",1472000},{"E0",10000},{"I0",1600},{"R0",16400},{"Vp",0.16},{"Vf",0.07}};
+unordered_map<string,double> parameter_meerut={{"A",26000},{"alpha",0.000011},{"delta",1.01},{"gamma",0.89},{"mew",0.143},{"mew1",0.156},{"N0",2200000},{"S0",2165000},{"E0",14000},{"I0",2500},{"R0",21000},{"Vp",0.18},{"Vf",0.08}};
+
+/*
+unordered_map<string,double> parameter_warangal={{"A",20000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.89},{"mew",0.143},{"mew1",0.155},{"N0",1400000},{"S0",1370000},{"E0",10000},{"I0",1500},{"R0",18500},{"Vp",0.21},{"Vf",0.11}};
+unordered_map<string,double> parameter_guntur={{"A",22000},{"alpha",0.000011},{"delta",1.01},{"gamma",0.90},{"mew",0.143},{"mew1",0.156},{"N0",1600000},{"S0",1570000},{"E0",11000},{"I0",1700},{"R0",17300},{"Vp",0.21},{"Vf",0.11}};
+unordered_map<string,double> parameter_nellore={{"A",18000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.89},{"mew",0.143},{"mew1",0.155},{"N0",1200000},{"S0",1180000},{"E0",8000},{"I0",1200},{"R0",10800},{"Vp",0.20},{"Vf",0.10}};
+unordered_map<string,double> parameter_kurnool={{"A",17000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.89},{"mew",0.143},{"mew1",0.155},{"N0",1100000},{"S0",1080000},{"E0",7000},{"I0",1100},{"R0",10900},{"Vp",0.20},{"Vf",0.10}};
+unordered_map<string,double> parameter_anantapur={{"A",16000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.89},{"mew",0.143},{"mew1",0.155},{"N0",1000000},{"S0",980000},{"E0",6000},{"I0",900},{"R0",13100},{"Vp",0.20},{"Vf",0.10}};
+
+unordered_map<string,double> parameter_durgapur={{"A",15000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",1000000},{"S0",980000},{"E0",6000},{"I0",900},{"R0",13100},{"Vp",0.18},{"Vf",0.08}};
+unordered_map<string,double> parameter_haldia={{"A",14000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",900000},{"S0",880000},{"E0",5000},{"I0",800},{"R0",14200},{"Vp",0.18},{"Vf",0.08}};
+unordered_map<string,double> parameter_kharagpur={{"A",14000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",900000},{"S0",880000},{"E0",5000},{"I0",800},{"R0",14200},{"Vp",0.18},{"Vf",0.08}};
+
+unordered_map<string,double> parameter_rohtak={{"A",16000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",1100000},{"S0",1080000},{"E0",7000},{"I0",1100},{"R0",10900},{"Vp",0.22},{"Vf",0.12}};
+unordered_map<string,double> parameter_panipat={{"A",15000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",1000000},{"S0",980000},{"E0",6000},{"I0",900},{"R0",13100},{"Vp",0.22},{"Vf",0.12}};
+unordered_map<string,double> parameter_sonipat={{"A",15000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",1000000},{"S0",980000},{"E0",6000},{"I0",900},{"R0",13100},{"Vp",0.22},{"Vf",0.12}};
+
+unordered_map<string,double> parameter_rewa={{"A",13000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",900000},{"S0",880000},{"E0",5000},{"I0",800},{"R0",14200},{"Vp",0.17},{"Vf",0.07}};
+unordered_map<string,double> parameter_satna={{"A",13000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",900000},{"S0",880000},{"E0",5000},{"I0",800},{"R0",14200},{"Vp",0.17},{"Vf",0.07}};
+
+unordered_map<string,double> parameter_sambalpur={{"A",12000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",800000},{"S0",780000},{"E0",4000},{"I0",700},{"R0",11300},{"Vp",0.19},{"Vf",0.09}};
+unordered_map<string,double> parameter_rourkela={{"A",13000},{"alpha",0.000010},{"delta",1.00},{"gamma",0.88},{"mew",0.143},{"mew1",0.154},{"N0",900000},{"S0",880000},{"E0",5000},{"I0",800},{"R0",14200},{"Vp",0.19},{"Vf",0.09}};
+*/
+
+unordered_map<string,double> parameter_indonesia={
+{"A",5000000},{"alpha",0.000011},{"delta",1.28},{"gamma",0.84},{"mew",0.145},{"mew1",0.162},
+{"N0",277000000},{"S0",270000000},{"E0",300000},{"I0",600000},{"R0",6100000},{"Vp",0.45},{"Vf",0.35}
+};
+
+unordered_map<string,double> parameter_pakistan={
+{"A",4000000},{"alpha",0.000011},{"delta",1.30},{"gamma",0.83},{"mew",0.148},{"mew1",0.165},
+{"N0",240000000},{"S0",235000000},{"E0",250000},{"I0",500000},{"R0",4250000},{"Vp",0.30},{"Vf",0.20}
+};
+
+unordered_map<string,double> parameter_nigeria={
+{"A",3500000},{"alpha",0.000012},{"delta",1.32},{"gamma",0.82},{"mew",0.150},{"mew1",0.167},
+{"N0",223000000},{"S0",218000000},{"E0",200000},{"I0",420000},{"R0",3380000},{"Vp",0.18},{"Vf",0.10}
+};
+
+unordered_map<string,double> parameter_bangladesh={
+{"A",3000000},{"alpha",0.000012},{"delta",1.31},{"gamma",0.83},{"mew",0.148},{"mew1",0.165},
+{"N0",170000000},{"S0",166000000},{"E0",180000},{"I0",350000},{"R0",3470000},{"Vp",0.40},{"Vf",0.30}
+};
+
+unordered_map<string,double> parameter_mexico={
+{"A",2500000},{"alpha",0.000011},{"delta",1.29},{"gamma",0.84},{"mew",0.147},{"mew1",0.163},
+{"N0",129000000},{"S0",125000000},{"E0",150000},{"I0",300000},{"R0",3550000},{"Vp",0.55},{"Vf",0.45}
+};
+
+
+unordered_map<string,double> parameter_ethiopia={
+{"A",2200000},{"alpha",0.000011},{"delta",1.28},{"gamma",0.84},{"mew",0.147},{"mew1",0.163},
+{"N0",126000000},{"S0",123000000},{"E0",120000},{"I0",240000},{"R0",2640000},{"Vp",0.25},{"Vf",0.15}
+};
+
+unordered_map<string,double> parameter_philippines={
+{"A",2000000},{"alpha",0.000012},{"delta",1.30},{"gamma",0.83},{"mew",0.148},{"mew1",0.165},
+{"N0",115000000},{"S0",112000000},{"E0",140000},{"I0",260000},{"R0",2600000},{"Vp",0.50},{"Vf",0.38}
+};
+
+
+unordered_map<string,double> parameter_egypt={
+{"A",1900000},{"alpha",0.000011},{"delta",1.27},{"gamma",0.84},{"mew",0.146},{"mew1",0.162},
+{"N0",110000000},{"S0",107000000},{"E0",130000},{"I0",240000},{"R0",2630000},{"Vp",0.35},{"Vf",0.25}
+};
+
+unordered_map<string,double> parameter_vietnam={
+{"A",1500000},{"alpha",0.000010},{"delta",1.20},{"gamma",0.88},{"mew",0.135},{"mew1",0.150},
+{"N0",100000000},{"S0",97000000},{"E0",60000},{"I0",100000},{"R0",840000},{"Vp",0.70},{"Vf",0.60}
+};
+
+
+
+unordered_map<string,double> parameter_iran={
+{"A",1400000},{"alpha",0.000011},{"delta",1.28},{"gamma",0.84},{"mew",0.147},{"mew1",0.163},
+{"N0",88000000},{"S0",85000000},{"E0",90000},{"I0",180000},{"R0",1730000},{"Vp",0.55},{"Vf",0.45}
+};
+
+unordered_map<string,double> parameter_turkey={
+{"A",1300000},{"alpha",0.000011},{"delta",1.27},{"gamma",0.84},{"mew",0.146},{"mew1",0.162},
+{"N0",86000000},{"S0",83000000},{"E0",80000},{"I0",150000},{"R0",1770000},{"Vp",0.60},{"Vf",0.50}
+};
+
+unordered_map<string,double> parameter_thailand={
+{"A",900000},{"alpha",0.000010},{"delta",1.22},{"gamma",0.87},{"mew",0.138},{"mew1",0.152},
+{"N0",70000000},{"S0",67000000},{"E0",50000},{"I0",80000},{"R0",870000},{"Vp",0.65},{"Vf",0.55}
+};
+
+
+unordered_map<string,double> parameter_tanzania={
+{"A",900000},{"alpha",0.000011},{"delta",1.29},{"gamma",0.83},{"mew",0.149},{"mew1",0.165},
+{"N0",65000000},{"S0",63000000},{"E0",70000},{"I0",120000},{"R0",810000},{"Vp",0.22},{"Vf",0.12}
+};
+
+unordered_map<string,double> parameter_myanmar={
+{"A",850000},{"alpha",0.000011},{"delta",1.28},{"gamma",0.84},{"mew",0.147},{"mew1",0.163},
+{"N0",55000000},{"S0",53000000},{"E0",60000},{"I0",110000},{"R0",830000},{"Vp",0.40},{"Vf",0.30}
+};
+
+unordered_map<string,double> parameter_southkorea={
+{"A",800000},{"alpha",0.000010},{"delta",1.20},{"gamma",0.89},{"mew",0.130},{"mew1",0.145},
+{"N0",52000000},{"S0",50000000},{"E0",30000},{"I0",60000},{"R0",910000},{"Vp",0.75},{"Vf",0.70}
+};
+
+unordered_map<string,double> parameter_colombia={
+{"A",900000},{"alpha",0.000011},{"delta",1.28},{"gamma",0.84},{"mew",0.147},{"mew1",0.163},
+{"N0",52000000},{"S0",50000000},{"E0",70000},{"I0",120000},{"R0",810000},{"Vp",0.60},{"Vf",0.50}
+};
+
+unordered_map<string,double> parameter_kenya={
+{"A",800000},{"alpha",0.000011},{"delta",1.28},{"gamma",0.84},{"mew",0.147},{"mew1",0.163},
+{"N0",55000000},{"S0",53000000},{"E0",60000},{"I0",110000},{"R0",830000},{"Vp",0.30},{"Vf",0.20}
+};
+
+unordered_map<string,double> parameter_spain={
+{"A",700000},{"alpha",0.000010},{"delta",1.25},{"gamma",0.85},{"mew",0.145},{"mew1",0.160},
+{"N0",47000000},{"S0",45000000},{"E0",60000},{"I0",100000},{"R0",940000},{"Vp",0.70},{"Vf",0.60}
+};
+
+unordered_map<string,double> parameter_argentina={
+{"A",700000},{"alpha",0.000011},{"delta",1.27},{"gamma",0.84},{"mew",0.147},{"mew1",0.163},
+{"N0",46000000},{"S0",44000000},{"E0",60000},{"I0",100000},{"R0",940000},{"Vp",0.65},{"Vf",0.55}
+};
+
+	/*
+	{"ASANSOL", parameter_asansol},
+    {"IMPHAL", parameter_imphal},
+    {"BHOPAL", parameter_bhopal},
+    {"JAIPUR", parameter_jaipur},
+    {"SURAT", parameter_surat},
+    {"VADODARA", parameter_vadodara},
+    {"KOCHI", parameter_kochi},*/
 
 inline unordered_map<string, unordered_map<string, double>> seir_params = {
 
@@ -381,14 +542,8 @@ inline unordered_map<string, unordered_map<string, double>> seir_params = {
     {"PATNA", parameter_patna},
     {"LUCKNOW", parameter_lucknow},
     {"RANCHI", parameter_ranchi},
-    {"IMPHAL", parameter_imphal},
-    {"BHOPAL", parameter_bhopal},
-    {"JAIPUR", parameter_jaipur},
-    {"SURAT", parameter_surat},
-    {"VADODARA", parameter_vadodara},
     {"NAGPUR", parameter_nagpur},
     {"COIMBATORE", parameter_coimbatore},
-    {"KOCHI", parameter_kochi},
     {"VISAKHAPATNAM", parameter_visakhapatnam},
     {"GUWAHATI", parameter_guwahati},
     {"BHUBANESWAR", parameter_bhubaneswar},
@@ -423,6 +578,54 @@ inline unordered_map<string, unordered_map<string, double>> seir_params = {
 	{"CANADA", parameter_canada},
 	{"ITALY", parameter_italy},
 	{"SOUTH_AFRICA", parameter_southafrica},
+	{"AGRA", parameter_agra},
+	{"VARANASI", parameter_varanasi},
+	{"AMRITSAR", parameter_amritsar},
+	{"JODHPUR", parameter_jodhpur},
+	{"MYSORE", parameter_mysuru},
+	{"MANGALORE", parameter_mangalore},
+	{"KANPUR", parameter_kanpur},
+	{"ALLAHABAD", parameter_allahabad},
+	{"NASHIK", parameter_nashik},
+	{"AURANGABAD", parameter_aurangabad},
+	{"VIJAYAWADA", parameter_vijayawada}, 
+	{"GWALIOR", parameter_gwalior},
+	{"JABALPUR", parameter_jabalpur},
+	{"UDAIPUR", parameter_udaipur},
+	{"SHIMLA", parameter_shimla},
+	{"SILIGURI", parameter_siliguri},
+	{"DHANBAD", parameter_dhanbad},
+	{"SALEM", parameter_salem},
+	{"TIRUNELVELI", parameter_tirunelveli},
+	{"RAJKOT", parameter_rajkot},
+	{"JAMSHEDPUR", parameter_jamshedpur},
+	{"NOIDA", parameter_noida},
+	{"FARIDABAD", parameter_faridabad},
+	{"GHAZIABAD", parameter_ghaziabad},
+	{"KOTA", parameter_kota},
+	{"BAREILLY", parameter_bareilly},
+	{"ALIGARH", parameter_aligarh},
+	{"MORADABAD", parameter_moradabad},
+	{"MEERUT", parameter_meerut},
+	{"INDONESIA", parameter_indonesia},
+	{"PAKISTAN", parameter_pakistan},
+	{"NIGERIA", parameter_nigeria},
+	{"BANGLADESH", parameter_bangladesh},
+	{"MEXICO", parameter_mexico},
+	{"ETHIOPIA", parameter_ethiopia},
+	{"PHILIPPINES", parameter_philippines},
+	{"EGYPT", parameter_egypt},
+	{"VIETNAM", parameter_vietnam},
+	{"IRAN", parameter_iran},
+	{"TURKEY", parameter_turkey},
+	{"THAILAND", parameter_thailand},
+	{"TANZANIA", parameter_tanzania},
+	{"MYANMAR", parameter_myanmar},
+	{"SOUTH_KOREA", parameter_southkorea},
+	{"COLOMBIA", parameter_colombia},
+	{"KENYA", parameter_kenya},
+	{"SPAIN", parameter_spain},
+	{"ARGENTINA", parameter_argentina},
 };
 	
 

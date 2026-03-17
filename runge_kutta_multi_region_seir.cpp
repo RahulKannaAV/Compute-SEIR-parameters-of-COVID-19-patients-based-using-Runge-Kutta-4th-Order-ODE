@@ -442,14 +442,21 @@ cout << seir_params["TRIVANDRUM"]["S0"] << endl;
 
 for(int reg_idx=0; reg_idx < allRegions.size(); reg_idx++){
 	region = allRegions[reg_idx];
-	const int N_INIT = seir_params[region]["N0"];
-	const double STEP_TIME = 0.1*(1679754.0/N_INIT);
-	const int NUM_STEPS = (int)1.0/(STEP_TIME);
+	int dayCount = 0; // Number of days simulated
+	double iterDiff = 0.0; // Difference between checkpoint and current iteration
+	double pastCheckpoint = 0.0; // Checkpoint iteration (it finished a Day)
+
+	const int NUM_DAYS = 730; // Total days to simulate SEIR model
+	const int N_INIT = seir_params[region]["N0"]; // Initial Population count
+	const double STEP_TIME = 0.1*(1679754.0/N_INIT); // Time difference between current states and next states
+	const int NUM_STEPS = (int)(1.0/(STEP_TIME)); // Number of steps of iterations (will be with magnitudes of total days)
+
+	const double ITERATIONS_PER_DAY = (1.0/(STEP_TIME * 10.0)); // Per day Iteration count
 	
 	cout << "NUM STEPS: " << NUM_STEPS << endl << endl;
 	cout << "SEIR of region (" << reg_idx+1 << "/" << allRegions.size() << ") " << region << endl;
 	
-		for(int i=1; i<=(73*NUM_STEPS); i++) {
+		for(int i=1; i<=((NUM_DAYS/10)*(NUM_STEPS+1)); i++) {
 			S0 = seir_params[region]["S0"];
 			E0 = seir_params[region]["E0"];
 			I0 = seir_params[region]["I0"];
@@ -457,9 +464,21 @@ for(int reg_idx=0; reg_idx < allRegions.size(); reg_idx++){
 			
 			if(i == 1) {
 				cout << " INITIAL: " << endl;
-				cout << "S: " << S0 << " | E: " << E0 << " | I: " << I0 << " | R: " << R0 << endl << endl;
+				cout << "S: " << S0 << " | E: " << E0 << " | I: " << I0 << " | R: " << R0 << endl;
 			}
 			computeSEIR(region, STEP_TIME);
+			iterDiff = i - pastCheckpoint;
+
+			if(iterDiff >= ITERATIONS_PER_DAY) {
+				dayCount++;
+				pastCheckpoint = ITERATIONS_PER_DAY*dayCount;
+			}
+
+			if(dayCount == NUM_DAYS) {
+				cout << "It is Day: " << dayCount << " by iteration: " << i << endl;
+				cout << "STOP THE COUNT" << endl;
+				break;
+			}
 			
 	
 		}
