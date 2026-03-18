@@ -1,5 +1,7 @@
 #include<iostream>
 #include<vector>
+#include<cmath>
+#include<fstream>
 #include<iomanip>
 #include "region_parameters.h"
 using namespace std;
@@ -419,9 +421,31 @@ void computeSEIR(string region, double STEP_TIME) {
 	seir_params[region]["N0"] = s1 + e1 + i1 + r1;
 }
 
+void writeDataToCSV(ofstream &file, unordered_map<string, double> &param, string region, int day, int sim) {
+	const double A = param["A"];
+	const double alpha = param["alpha"];
+	const double delta = param["delta"];
+	const double gamma = param["gamma"];
+	const double mew = param["mew"];
+	const double mew1 = param["mew1"];
+	const double N = param["N0"];
+	const double Vp = param["Vp"];
+	const double Vf = param["Vf"];
+
+	const double currentSuspected = round(param["S0"]);
+	const double currentExposed = round(param["E0"]);
+	const double currentInfected = round(param["I0"]);
+	const double currentRecovered = round(param["R0"]);
+
+	file << sim << "," << region << "," << day << "," << A << "," << alpha << "," << delta << ",";
+	file << gamma << "," << mew << "," << mew1 << "," << N << ",";
+	file << Vp << "," << Vf << "," << currentSuspected << "," << currentExposed << ",";
+	file << currentInfected << "," << currentRecovered << "\n";
+}
+
 int main() {
 	cout << setprecision(0) << fixed;
-
+	ofstream dataFile;
 	double S0, E0, I0, R0;
 	string region;
 	
@@ -435,28 +459,89 @@ int main() {
 		cout << regions << " ";
 	}
 	cout << endl << endl;
-	
-cout << seir_params["TRIVANDRUM"]["S0"] << endl;
 
+dataFile.open("seir_dataset_serial_sims.csv", ios::app);
+const int T = 2; // number of simulations per region
 
-
-for(int reg_idx=0; reg_idx < allRegions.size(); reg_idx++){
+// ----------------------------------- First 10 regions alone on SERIAL CODE -------------------------
+for(int reg_idx=0; reg_idx < 10; reg_idx++){
 	region = allRegions[reg_idx];
-	int dayCount = 0; // Number of days simulated
-	double iterDiff = 0.0; // Difference between checkpoint and current iteration
-	double pastCheckpoint = 0.0; // Checkpoint iteration (it finished a Day)
+	auto original_params = seir_params[region];
 
-	const int NUM_DAYS = 730; // Total days to simulate SEIR model
-	const int N_INIT = seir_params[region]["N0"]; // Initial Population count
-	const double STEP_TIME = 0.1*(1679754.0/N_INIT); // Time difference between current states and next states
-	const int NUM_STEPS = (int)(1.0/(STEP_TIME)); // Number of steps of iterations (will be with magnitudes of total days)
+	for(int sim=0; sim<=T; sim++) {
+		auto local_params = original_params;
+		int dayCount = 0; // Number of days simulated
+		double iterDiff = 0.0; // Difference between checkpoint and current iteration
+		double pastCheckpoint = 0.0; // Checkpoint iteration (it finished a Day)
 
-	const double ITERATIONS_PER_DAY = (1.0/(STEP_TIME * 10.0)); // Per day Iteration count
-	
-	cout << "NUM STEPS: " << NUM_STEPS << endl << endl;
-	cout << "SEIR of region (" << reg_idx+1 << "/" << allRegions.size() << ") " << region << endl;
-	
+		const int NUM_DAYS = 1095; // Total days to simulate SEIR model
+		const int N_INIT = local_params["N0"]; // Initial Population count
+		const double STEP_TIME = 0.1*(1679754.0/N_INIT); // Time difference between current states and next states
+		const int NUM_STEPS = (int)(1.0/(STEP_TIME)); // Number of steps of iterations (will be with magnitudes of total days)
+
+		const double ITERATIONS_PER_DAY = (1.0/(STEP_TIME * 10.0)); // Per day Iteration count
+		
+		cout << "NUM STEPS: " << NUM_STEPS << endl << endl;
+		cout << "SEIR of region (" << reg_idx+1 << "/" << allRegions.size() << ") " << region << endl;
+		
+		if(sim > 0) {
+
+				double noise = 0.95 + (rand()/(double)RAND_MAX) * 0.1;
+
+				switch(sim) {
+
+					case 1: // 🔒 Lockdown (reduced transmission)
+						local_params["alpha"] *= 0.5 * noise;
+						break;
+
+					case 2: // 🏥 Better healthcare (faster recovery)
+						local_params["gamma"] *= 1.3 * noise;
+						break;
+
+					case 3: // ⚠️ Aggressive variant
+						local_params["alpha"] *= 1.4 * noise;
+						local_params["delta"] *= 1.2 * noise;
+						break;
+
+					case 4: // ☠️ Higher mortality
+						local_params["mew1"] *= 1.5 * noise;
+						break;
+
+					case 5: // 🌆 High population mixing
+						local_params["alpha"] *= 1.2 * noise;
+						local_params["gamma"] *= 0.9 * noise;
+						break;
+					
+					case 6: // 💉 Vaccination rollout (reduced susceptible pool)
+						local_params["S0"] *= 0.7 * noise;   // fewer susceptibles
+						local_params["R0"] *= 1.3 * noise;   // more recovered/immune
+						break;
+
+					case 7: // 😷 Mask compliance (moderate transmission reduction)
+						local_params["alpha"] *= 0.7 * noise;
+						break;
+
+					case 8: // ✈️ Imported cases (external exposure spike)
+						local_params["E0"] *= 1.5 * noise;   // more exposed initially
+						local_params["I0"] *= 1.2 * noise;
+						break;
+
+					case 9: // 🧪 Mass testing & isolation
+						local_params["delta"] *= 1.4 * noise; // faster detection (E → I)
+						local_params["gamma"] *= 1.2 * noise; // faster recovery due to early care
+						local_params["alpha"] *= 0.85 * noise; // reduced spread due to isolation
+						break;
+
+					case 10: // ❄️ Seasonal effect (temporary surge)
+						local_params["alpha"] *= 1.25 * noise; // higher transmission
+						local_params["gamma"] *= 0.95 * noise; // slightly slower recovery
+						break;
+				}
+			}
+
 		for(int i=1; i<=((NUM_DAYS/10)*(NUM_STEPS+1)); i++) {
+			seir_params[region] = local_params;
+
 			S0 = seir_params[region]["S0"];
 			E0 = seir_params[region]["E0"];
 			I0 = seir_params[region]["I0"];
@@ -467,24 +552,28 @@ for(int reg_idx=0; reg_idx < allRegions.size(); reg_idx++){
 				cout << "S: " << S0 << " | E: " << E0 << " | I: " << I0 << " | R: " << R0 << endl;
 			}
 			computeSEIR(region, STEP_TIME);
+			local_params = seir_params[region];
 			iterDiff = i - pastCheckpoint;
 
 			if(iterDiff >= ITERATIONS_PER_DAY) {
 				dayCount++;
 				pastCheckpoint = ITERATIONS_PER_DAY*dayCount;
+				writeDataToCSV(dataFile, local_params, region, dayCount, sim);
 			}
 
 			if(dayCount == NUM_DAYS) {
 				cout << "It is Day: " << dayCount << " by iteration: " << i << endl;
 				cout << "STOP THE COUNT" << endl;
 				break;
-			}
-			
-	
+			}	
 		}
 		cout << " FINAL: " << endl;
 		cout << "S: " << S0 << " | E: " << E0 << " | I: " << I0 << " | R: " << R0 << endl << endl;
+
 	}
+		}
+	
+	dataFile.close();
 	
 	/*
 	cout << setprecision(6) << fixed;
